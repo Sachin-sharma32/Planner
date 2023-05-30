@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const PlannerCalender = () => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState<number | null>(null);
 
   const data = [
     { day: "", date: null },

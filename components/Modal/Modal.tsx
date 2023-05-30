@@ -6,7 +6,7 @@ interface ModalProps {
 }
 
 const Modal = ({ children }: ModalProps) => {
-  const [isBrowser, setIsBroswer] = useState(false);
+  const [isBrowser, setIsBroswer] = useState<boolean>(false);
   useEffect(() => {
     setIsBroswer(true);
   }, []);

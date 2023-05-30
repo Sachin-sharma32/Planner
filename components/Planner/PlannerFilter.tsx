@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import AddPeriodButton from "../utils/AddPeriodButton";
 
 const PlannerFilter = () => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState<number>(1);
   const data = ["Project Planning", "Weekly Planning", "Planning Insights"];
   const dispatch = useDispatch();
   return (

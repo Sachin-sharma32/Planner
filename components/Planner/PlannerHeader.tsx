@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Drawer from "./Drawer";
 
 const PlannerHeader = () => {
-  const [active, setActive] = useState(0);
-  const [drawerShown, setDrawerShown] = useState(false);
+  const [active, setActive] = useState<number>(0);
+  const [drawerShown, setDrawerShown] = useState<boolean>(false);
   const links = [
     { title: "Planning", image: "/images/planning.png" },
     { title: "Documentation", image: "/images/documentation.png" },

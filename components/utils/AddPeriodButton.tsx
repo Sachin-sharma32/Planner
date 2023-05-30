@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 interface ButtonProps {
-  onClick: () => void;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const AddPeriodButton = (props: ButtonProps) => {

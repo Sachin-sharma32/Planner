@@ -9,14 +9,22 @@ import { SingleInputDateRangeField } from "@mui/x-date-pickers-pro/SingleInputDa
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import AddPeriodButton from "../utils/AddPeriodButton";
 
+interface Base {
+  periodVisibility: boolean;
+}
+
+interface ReduxState {
+  base: Base;
+}
+
 const AddPeriod = () => {
-  const [active, setActive] = useState([2, 5]);
-  const [activeColor, setActiveColor] = useState(0);
+  const [active, setActive] = useState<Array<number>>([2, 5]);
+  const [activeColor, setActiveColor] = useState<number>(0);
   const days = ["S", "M", "T", "W", "T", "F", "S"];
   const colors = ["pink", "purple", "yellow", "green"];
   const dispatch = useDispatch();
   const periodVisibility = useSelector(
-    (state: any) => state.base.periodVisibility
+    (state: ReduxState) => state.base.periodVisibility
   );
   return (
     periodVisibility && (
@@ -90,11 +98,17 @@ const AddPeriod = () => {
             </div>
           </div>
           <div className="flex flex-col gap-[10px] w-full">
-            <label htmlFor="startTime">Start Time</label>
+            <label htmlFor="startTime">From</label>
 
-            <DemoContainer components={["SingleInputDateRangeField"]}>
+            {/* <DemoContainer components={["SingleInputDateRangeField"]}>
               <DateRangePicker slots={{ field: SingleInputDateRangeField }} />
-            </DemoContainer>
+            </DemoContainer> */}
+            <input
+              type="date"
+              id="startTime"
+              placeholder="St"
+              className=" w-full px-[14px] hover:border-black outline-none  border-gray-300 bg-white border py-[19px] rounded-lg"
+            />
           </div>
           <div className="flex items-center justify-between">
             <div className="flex gap-[14px]">

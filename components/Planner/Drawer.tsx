@@ -4,7 +4,7 @@ import React from "react";
 interface DrawerProps {
   drawerShown: boolean;
   links: { title: string; image: string }[];
-  setActive: (val: number) => void;
+  setActive: React.Dispatch<React.SetStateAction<number>>;
   active: number;
 }
 
